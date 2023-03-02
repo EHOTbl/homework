@@ -4,7 +4,7 @@ import {MessageType} from "../HW1";
 
 // создать тип вместо any и отобразить приходящие данные
 type FriendMessageType = {
-    message:MessageType;
+    message: MessageType;
 }
 
 const FriendMessage = (props: FriendMessageType) => {
@@ -17,7 +17,8 @@ const FriendMessage = (props: FriendMessageType) => {
                 <img
                     id={'hw1-friend-avatar-' + props.message.id}
                     // создаёт студент
-                    src={props.message.user.avatar} alt="friend avatar"
+                    src={props.message.user.avatar}
+                    alt="friend avatar"
                     //
                 />
                 <div className={s.friendText}>
@@ -32,9 +33,9 @@ const FriendMessage = (props: FriendMessageType) => {
                     <pre
                         id={'hw1-friend-text-' + props.message.id}
                         className={s.friendMessageText}
-                    >{props.message.message.text}
+                    >
                         {/*создаёт студент*/}
-
+                        {props.message.message.text}
                         {/**/}
                     </pre>
                 </div>
