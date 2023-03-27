@@ -5,19 +5,19 @@ import s2 from '../../s1-main/App.module.css'
 /*
 * 1 - описать типы AffairPriorityType, AffairType!
 * 2 - указать нужный тип для defaultAffairs!
-* 3 - дописать типы и логику функции filterAffairs и проверить её тестами
-* 4 - выполнить пункт 3 для функции deleteAffair
-* 5 - указать нужный тип в useState с affairs
-* 6 - дописать тип и логику функции deleteAffairCallback
-* 7 - в файле Affairs.tsx дописать типизацию пропсов
-* 8 - в файле Affairs.tsx дописать логику функций setAll, setHigh, setMiddle, setLow
-* 9 - в файле Affair.tsx дописать типизацию пропсов
-* 10 - в файле Affair.tsx дописать функции deleteCallback и использовать
+* 3 - дописать типы и логику функции filterAffairs и проверить её тестами!
+* 4 - выполнить пункт 3 для функции deleteAffair!
+* 5 - указать нужный тип в useState с affairs!
+* 6 - дописать тип и логику функции deleteAffairCallback!
+* 7 - в файле Affairs.tsx дописать типизацию пропсов!
+* 8 - в файле Affairs.tsx дописать логику функций setAll, setHigh, setMiddle, setLow!
+* 9 - в файле Affair.tsx дописать типизацию пропсов!
+* 10 - в файле Affair.tsx дописать функции deleteCallback и использовать!
 * 11 - в файле Affair.tsx отобразить приходящие данные
 * */
 
 // types
-export type AffairPriorityType = "all"|"high"|"middle"|"low" // need to fix any
+export type AffairPriorityType = "high" | "middle" | "low" // need to fix any
 export type AffairType = {
     _id: number // need to fix any
     name: string // need to fix any
@@ -35,14 +35,22 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: any, filter: any): any => { // need to fix any
+export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => { // need to fix any
+    if (filter === 'high') {
+        return affairs.filter(el => el.priority === 'high')
+    }
+    if (filter === 'low') {
+        return affairs.filter(el => el.priority === 'low')
+    }
+    if (filter === 'middle') {
+        return affairs.filter(el => el.priority === 'middle')
+    } else return affairs
 
-
-    return affairs // need to fix
+    // need to fix
 }
-export const deleteAffair = (affairs: any, _id: number): any => { // need to fix any
+export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any
 
-    return affairs // need to fix
+    return affairs.filter(el => el._id !== _id)
 }
 
 function HW2() {
@@ -51,7 +59,9 @@ function HW2() {
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: number) => { // need to fix any
+    const deleteAffairCallback = (_id: number) => {
+        setAffairs(deleteAffair(affairs,_id))
+        // need to fix any
         // need to fix
     }
 
