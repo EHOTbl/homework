@@ -3,30 +3,63 @@
 }
 
 .friendImageAndText {
+    display: flex;
 
+    padding-left: 70px;
 }
 
 .friendImageAndText img {
-   width: 40px;
-   height: 40px;
+    margin-top: 12px;
+    width: 48px;
+    height: 48px;
 }
 
 .friendText {
-
+    height: 60px;
+    background-color: lightcoral;
+    /*#F5F7FB*/
+    border-radius: 20px 20px 20px 0;
+    padding: 7px 7px 8px 10px;
+    margin-left: 10px;
+    position: relative;
 }
 
 .friendText:after {
+    content: '';
+    position: absolute; /* Абсолютное позиционирование */
+    left: -16px;
+    bottom: 0; /* Положение треугольника */
+    border: 8px solid transparent;
+    border-right: 8px solid lightcoral;
+    border-bottom: 8px solid lightcoral;
 
 }
 
 .friendName {
-
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    justify-content: left;
+    padding-left: 18px;
+    padding-bottom: 2px;
 }
 
 .friendMessageText {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    justify-content: left;
+    padding-left: 18px;
 
 }
 
 .friendTime {
-
+    display: flex;
+    padding-left: 0;
+    justify-content: left;
+    margin: 4px 0 0 82px;
+    font-weight: 600;
+    font-size: 10px;
 }

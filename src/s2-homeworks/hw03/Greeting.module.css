@@ -1,22 +1,43 @@
 .greetingForm {
+    padding: 10px 0 10px 50px;
 }
 
 .inputAndButtonContainer {
+    display: flex;
 }
 
 .error {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    color: #CC0000;
+
 }
 
 .input {
+    margin-top: 10px;
+    height: 36px;
+    width: 372px;
+    border-radius: 4px;
 }
 
 .input:focus {
 }
 
 .errorInput {
+    border: 1px solid #CC0000;
 }
 
 .button {
+    width: 78px;
+    height: 36px;
+    border-radius: 4px;
+    margin: 10px 0 0 13px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    background-color: #0066CC;
+
 }
 
 .button:focus {
@@ -26,10 +47,19 @@
 }
 
 .button:disabled {
+    opacity: 0.5;
 }
 
 .text {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    opacity: 0.5;
 }
 
 .greeting {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding-top: 10px;
 }
